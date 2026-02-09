@@ -34,3 +34,76 @@
 
                      Output: Bronx
                             Zoo
+
+
+Packages organize classes into folders and import statement tells for a compiler to search exactly which package for a class.
+
+we use wildcards instead of mentioning java.util.Math etc...simply we write java.util.*;
+    the only disadvantages with wildcard is they do not import subfolders,methods,files.
+when we compile java file,it only imports the required classes only.
+
+if 2 classes are in same package then no import needed.
+
+when java sees a class name it searches in this order -> Same package > java.lang > imported packages . else compile time error
+
+using wildcard(*) u can only import classes,u cannot import methods,fields
+    but if u want to import methods or fields java has special feature
+        import static java.util.Math.get ->  using static u can import
+
+
+Naming Conflicts -> it arises due to same class name example Date ->java.util.Date,java.sql.Date both have the Date class common but packages are different 
+
+    Example: import java.util.*;
+        import java.sql.*;
+     public s.v.m()
+    {
+        Date date; // compile time error it says Date is ambiguous
+    }
+
+    import java.util.Date;
+        import java.sql.*;
+     public s.v.m()
+    {
+        Date date; // explict beats wild card so it uses java.util.Date
+    }
+
+    import java.util.Date;
+        import java.sql.Date;
+     public s.v.m()
+    {
+        Date date; // compile time error
+    }
+
+to avoid ambiguity we introduce fully-qualify which acts like
+     import java.util.Date;
+     public s.v.m()
+    {
+        Date date; //  java.util
+        java.sql.Date sqldate; //fully qualify
+    }
+                OR
+
+    public s.v.m()
+    {
+        java.util.Date date; //  fully qualify
+        java.sql.Date sqldate; //fully qualify
+    }
+
+if we dont write any packages it uses a default package(Not recommended)
+
+
+Creation:  C:\temp\packagea\ClassA.java
+            C:\temp\packageb\ClassB.java
+if -> package packageb;
+    import packagea.ClassA;
+
+    public class ClassB {
+        public static void main(String[] args) {
+            ClassA a;
+            System.out.println("Got it");
+        }
+    }
+
+    compile -> javac packagea/ClassA.java packageb/ClassB.java
+    run -> java packageb.ClassB
+
