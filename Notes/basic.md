@@ -105,5 +105,25 @@ if -> package packageb;
     }
 
     compile -> javac packagea/ClassA.java packageb/ClassB.java
-    run -> java packageb.ClassB
+    run -> java packageb.ClassB   ->observing carefully while compiling we used package/ClassB [/] while running package.ClassB [.] ,
+    while execution java never allows / because compilation happens at OS level,execution happens using JVM
 
+Classpath is a place where java looks for .class files, ina specific location or in JAR file 
+    JAR file is nothing but a zip file which consists of .class files.
+    Example:  java -cp ".;C:\temp\someOtherLocation;c:\temp\myJar.jar" myPackage.MyClass
+
+    java -cp "C:\temp\directoryWithJars\*" myPackage.MyClass  '*' is used for all JAR files but not subdirectories
+
+
+*****  Objects -> the real instance of a class.
+        what is reference?
+            example : Student s = new Student();
+                    int x=10;
+            here x directly stores the value but s is the reference i.e new Student() creates an object in memory (heap). Student s stores only the address/location of created object new Student(), just "s" stores only location.
+        Example: Student s=new Student();
+                Student s1=s;
+                 s and s1 both are pointing to same Object but it does not happen same in primitives
+                int x=5;
+                int y=x;
+                y=10;
+                S.O.P(x); //5  they dont share memory,they are just separate values

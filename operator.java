@@ -11,6 +11,10 @@ public class operator{
     // {
     //     System.out.print("Integer1");
     // }
+//     public void method(int x) {
+//  if (x!=0) { System.out.println(x);
+//  } else { System.out.println("n");
+ //} }
     public static void main(String[] args)
     {
         Scanner sc=new Scanner(System.in);
@@ -113,10 +117,106 @@ public class operator{
 
     // System.out.println(i + " " + j);
 
-     LocalDateTime dt =
+    //  LocalDateTime dt =
 
-            LocalDateTime.of(2027, Month.APRIL, 5, 6, 15, 30, 0);
+    //         LocalDateTime.of(2027, Month.APRIL, 5, 6, 15, 30, 0);
 
-        System.out.println(dt);
+    //     System.out.println(dt);
+
+    // Integer a = 127;
+
+    // Integer b = a;
+
+    // a++;
+
+    // b++;
+
+    // System.out.println(a);
+
+    // System.out.println(b);
+
+    // System.out.println(a == b);
+
+
+    // Object obj = new Object();
+
+    // Double d = 3.0;
+
+
+
+    // System.out.println(obj.getClass());
+
+    // System.out.println(d.toString());
+
+
+//      Integer p = 200;
+
+//     Integer q = p;
+
+//    System.out.println(p == q);
+
+//     p--;
+
+//     q++;
+
+//     System.out.println(p);
+
+//     System.out.println(q);
+
+//     System.out.println(p == q);
+
+
+// Integer a = 100;
+
+//     Integer b = 100;
+
+//     a++;
+
+//     b++;
+
+//     System.out.println(a == b);
+
+
+// List<Double> list = new ArrayList<>();
+
+//     list.add(1.1);
+
+//     list.add(null);
+
+
+
+//     System.out.println(list);
+
+
+
+//     double d = list.get(1);
+
+//     System.out.println(d);
+
+// Double d1 = Double.valueOf("10.0");
+
+//     Double d2 = Double.valueOf("10.0");
+
+//     System.out.println(d1.equals(d2));
+
+//     System.out.println(d1 == d2);
+
+//  LocalDate d = LocalDate.of(2024, Month.FEBRUARY, 29);
+
+//     System.out.println(d.getDayOfWeek());
+
+//     System.out.println(d.getDayOfYear());
+
+//     System.out.println(d.isLeapYear());
+
+        // operator op=new operator();
+        // op.method(5);
+        List <Integer> l=new ArrayList<>();
+        List <Integer> l1=l;
+        l.add(5);
+        l.add(10);
+        l1.add(20);
+        l.remove(1);
+        System.out.print(l+" "+l1);
     }
 }
