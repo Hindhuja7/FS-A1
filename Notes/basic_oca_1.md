@@ -115,7 +115,7 @@ Classpath is a place where java looks for .class files, ina specific location or
     java -cp "C:\temp\directoryWithJars\*" myPackage.MyClass  '*' is used for all JAR files but not subdirectories
 
 
-*****  Objects -> the real instance of a class.
+*****Objects    -> the real instance of a class.
         what is reference?
             example : Student s = new Student();
                     int x=10;
@@ -127,3 +127,129 @@ Classpath is a place where java looks for .class files, ina specific location or
                 int y=x;
                 y=10;
                 S.O.P(x); //5  they dont share memory,they are just separate values
+
+Constructor -> Student s=new Student(); -> s is the refernce of the object fine!
+                new creates a object in memory and assigns with default values of its type,then after when it sees Student() ,immediately it intializes with a assgined values in a constructor and constructor prepares object for use.
+
+        Example:  public class Student{
+                    String name;
+        }
+        in main method -> Student s = new Student() -> creates a object in memory and assign with a default value name = null
+
+        public class Student{
+            String name;
+            Student()
+            {
+                name="greeshma";
+            }
+        }
+        in main method -> Student s=new Student() -> creates a object in memory and assign with a default value name = null and immediately it replaces/assgins the value greeshma so output becomes -> name=greeshma
+
+        Student name="greeshma";
+        Student()
+        {
+            name="hindhuja";
+        }
+        Student s=new Student(); //hindhuja
+
+        Student name="greeshma";
+        Student(String name)
+        {
+            name="hindhuja";
+        }
+        Student s=new Student("bhavya") //greeshma
+
+        Student name="greeshma";
+        Student(String name)
+        {
+            this.name="hindhuja";
+        }
+        Student s=new Student("bhavya") //hindhuja
+
+public class Swan {
+    int numberEggs;
+
+    public static void main(String[] args) {
+        Swan mother = new Swan();
+        mother.numberEggs = 1;
+        System.out.println(mother.numberEggs);
+    }
+}
+        mother.numberEggs=1 is called setting a field
+        mother.numberEggs is called getting a field
+
+String first = "Theodore";
+String last = "Moose";
+String full = first + last; //TheodoreMoose  -> fields can write their own value or read from other field
+
+Instance Initializer block -> it is a block of code, which is executed for every object . If we have multiple constructors but, for every constructor i want to execute something very common so instead of writing in each and every constructor i will make use of IIB .
+
+Example: class Demo {
+    int a = show("A");
+
+    {
+        show("B");   //IIB
+    }
+
+    Demo() {
+        show("C");
+    }
+
+    int show(String s) {
+        System.out.print(s);
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        new Demo();
+    } 
+}   output: ABC
+
+Order of Execution of java after object creation is -> Default value > field Initializer > IIB > constructor
+For every new Student()->[Object] creation we store default value and then default value is replaced with field value and then IIB is executed,next constructor
+
+Example: public class basic_prog {
+    String s="greeshma";
+    {
+        s="hindhuja";
+    }
+    basic_prog(String s)
+    {
+       // s=s;
+        this.s=s;
+    }
+     public static void main(String[] args)
+    {
+        basic_prog b=new basic_prog("bhavya");
+        System.out.print(b.s); //hindhuja    if this.s answer is //bhavya
+    }
+}
+
+
+References -> primitives store actual value but for object a variable stores a address,
+    int x=5; 5 is stored in x;
+    Object s=new Object(); s stores the address of Object() because it is too large and complex to stores value
+
+refernces can store null values but primitives cannot store
+u can only call methods on reference type but we cannot do that for primitives
+
+
+variables -> int x //declaring  , x=10; //initialization
+int i1,i2,i3=0; // i1,i2 are just declared but i3=0 each comma separated space creates itw own mini initialization
+        u cannot declare like this double d1,double d2; and [int i1; int i2;] -> same line not allowed
+
+
+a text must begin with sequence of chars,$,_
+a text can end with numbers like hello1 etc..
+u cannot use keywords for variable declaration like public,class,int
+java is case Sensitive
+
+
+*******Types of variables:
+local,instance,static
+
+when object is garbage collected? ...when no reference is pointing to object and when references go out of scope.
+
+garbage collector deletes object not references
+
+object live as long as one reference point to it

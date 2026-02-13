@@ -211,12 +211,19 @@ public class operator{
 
         // operator op=new operator();
         // op.method(5);
-        List <Integer> l=new ArrayList<>();
-        List <Integer> l1=l;
-        l.add(5);
-        l.add(10);
-        l1.add(20);
-        l.remove(1);
-        System.out.print(l+" "+l1);
+        // List <Integer> l=new ArrayList<>();
+        // List <Integer> l1=l;
+        // l.add(5);
+        // l.add(10);
+        // l1.add(20);
+        // l.remove(1);
+        // System.out.print(l+" "+l1);
+        //   String s1 = "java";
+
+        // String s2 = new String("java");
+
+        // System.out.print(s1 == s2);
+        Period p = Period.ofDays(1).ofYears(2);
+System.out.println(p);
     }
 }
